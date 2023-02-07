@@ -12,8 +12,8 @@ app.listen(port, function () {
 });
 
 app.get("/", function (req, res) {
-  var spawn = require("child_process").spawn;
-  var process = spawn("python", ["./df/get_data.py"]);
+  const spawn = require("child_process").spawn;
+  const process = spawn("python", ["./df/get_data.py"]);
   process.stdout.on("data", function (data: string) {
     res.send(data.toString());
   });
